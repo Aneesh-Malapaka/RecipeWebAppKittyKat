@@ -94,6 +94,7 @@ article h1 {
     display: flex;
     gap: 20px;
     flex-direction: column;
+
 }
 
 .processBox .ingredientsBox ul,
@@ -156,6 +157,21 @@ input[type="range"]::-webkit-slider-thumb {
     outline: none;
 }
 
+button {
+    min-width: 45vw;
+    margin: auto;
+    border: none;
+    height: 50px;
+    border-radius: 20px;
+    background: coral;
+    color: rgb(255, 255, 255);
+    font-size: 25px;
+    font-family: 'Dancing Script';
+    font-weight: 700;
+    cursor: pointer;
+
+}
+
 
 @media screen and (min-width:920px) {
     article img {
@@ -174,5 +190,9 @@ input[type="range"]::-webkit-slider-thumb {
     .processBox .instructionsBox ul li,
     .recipe .servesBox {
         font-size: 1.25em;
+    }
+
+    button {
+        min-width: 25vw;
     }
 }
