@@ -40,7 +40,7 @@
                         <input type="range" name="serves" class="inpServe" id="serves" step="4" min="4" max="40"
                             value="4">
                     </div>
-                    <div class="processBox">
+                    <div class="processBox" style="display: none;transition: display 2s ease;">
                         <div class="ingredientsBox">
                             <h2>Ingredients: </h2>
                             <ul class="ingList">
@@ -64,6 +64,7 @@
                             </ul>
                         </div>
                     </div>
+                    <button type="button" class="btn-recipe">Show Recipe</button>
                 </article>
                 <article class="recipe recipe2">
                     <h1 class="recipeName">Tuna Salad</h1>
@@ -73,11 +74,11 @@
                         <input type="range" name="serves" class="inpServe" id="serves2" step="2" min="2" max="40"
                             value="2">
                     </div>
-                    <div class="processBox">
+                    <div class="processBox" style="display:none;">
                         <div class="ingredientsBox">
                             <h2>Ingredients: </h2>
                             <ul class="ingList">
-                                <li><span>2</span> cans of tuna (160g each)</li>
+                                <li><span>2</span> g cans of tuna (160g each)</li>
                                 <li><span>1/2</span> cucumber, diced</li>
                                 <li><span>1/2</span> red onion, chopped</li>
                                 <li><span>2</span> tablespoons mayonnaise</li>
@@ -98,6 +99,7 @@
                             </ul>
                         </div>
                     </div>
+                    <button type="button" class="btn-recipe">Show Recipe</button>
                 </article>
                 <article class="recipe recipe3">
                     <h1 class="recipeName">Chocolate Chip Cookies</h1>
@@ -107,7 +109,7 @@
                         <input type="range" name="serves" class="inpServe" id="serves3" step="24" min="24" max="240"
                             value="24">
                     </div>
-                    <div class="processBox">
+                    <div class="processBox" style="display: none;">
                         <div class="ingredientsBox">
                             <h2>Ingredients: </h2>
                             <ul class="ingList">
@@ -142,6 +144,7 @@
                             </ul>
                         </div>
                     </div>
+                    <button type="button" class="btn-recipe">Show Recipe</button>
                 </article>
             </section>
         </main>
@@ -149,6 +152,28 @@
 
         </footer>
         <script src="index.js"></script>
+        <script>
+            let btn = document.querySelectorAll(".btn-recipe")
+            let processBox = document.querySelectorAll(".processBox")
+
+            for (let i = 0; i < btn.length; i++) {
+
+                btn[i].addEventListener("click", () => {
+                    if (processBox[i].style.display == "none") {
+                        processBox[i].style.display = "flex"
+                        btn[i].textContent = "Close Recipe"
+
+                    }
+
+                    else {
+                        console.log("work")
+                        processBox[i].style.display = "none"
+                        btn[i].textContent = "Show Recipe"
+                    }
+
+                })
+            }
+        </script>
     </body>
 
 </html>
